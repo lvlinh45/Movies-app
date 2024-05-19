@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "59273016662",
+    "project_id": "movies-app-6392c",
+    "storage_bucket": "movies-app-6392c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59273016662:android:1857f423bc5eafbd28d2f7",
+        "android_client_info": {
+          "package_name": "linh.edu.moviesapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1_nkgZwSsDmgW6fl9Hux7ZQYEnl_Cph0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
