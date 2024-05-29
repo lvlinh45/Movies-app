@@ -3,6 +3,15 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+}
 android {
     namespace = "linh.edu.moviesapp"
     compileSdk = 34
@@ -45,9 +54,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+//    implementation ("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
     implementation ("com.github.bumptech.glide:glide:4.12.0")
-//    implementation ("com.github.ismaeldivita.chip-navigation-bar:1.4.0")
 //    implementation ("com.github.Dimezis:BlurView:version-2.0.3")
 
 }
