@@ -15,7 +15,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="90dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -60,19 +61,18 @@
                 android:id="@+id/editTextText2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:height="50dp"
                 android:layout_margin="16dp"
-                android:ems="10"
+                android:height="50dp"
                 android:background="@drawable/dark_blue_bg"
-                android:inputType="text"
-               android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:hint="Tìm kiếm Movies"
                 android:drawableStart="@drawable/search"
                 android:drawableEnd="@drawable/microphone"
-                android:padding="12dp"
                 android:drawablePadding="8dp"
-                />
+                android:ems="10"
+                android:hint="Tìm kiếm Movies"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -103,6 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:orientation="horizontal">
 
@@ -111,18 +112,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/white"
                     android:text="Top Movies"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="Xem tất cả" />
+                    android:text="Xem tất cả"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -151,6 +153,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/recyclerViewTopMovies" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -164,18 +167,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/white"
                     android:text="Upcoming Movies"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="Xem tất cả" />
+                    android:text="Xem tất cả"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -184,6 +188,9 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewUpcoming"
+                    android:clipToPadding="false"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_constraintBottom_toBottomOf="parent"

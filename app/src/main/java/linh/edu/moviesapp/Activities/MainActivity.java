@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
@@ -21,7 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import linh.edu.moviesapp.Adapters.FilmListAdapter;
 import linh.edu.moviesapp.Adapters.SlidersAdapter;
+import linh.edu.moviesapp.Domains.Film;
 import linh.edu.moviesapp.Domains.SliderItems;
 import linh.edu.moviesapp.databinding.ActivityMainBinding;
 
@@ -47,8 +50,67 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         initBanner();
+        initTopMoving();
+        initUpcoming();
     }
 
+    private void initUpcoming() {
+        DatabaseReference myRef = database.getReference("Upcomming");
+        binding.progressUpcoming.setVisibility(View.VISIBLE);
+        ArrayList<Film> items = new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+                    for (DataSnapshot issue:snapshot.getChildren()) {
+                        items.add(issue.getValue(Film.class));
+                    }
+                    if(!items.isEmpty()) {
+                        binding.recyclerViewUpcoming.setLayoutManager(new LinearLayoutManager(MainActivity.this,
+                                                                                                    LinearLayoutManager.HORIZONTAL,
+                                                                                        false));
+                        binding.recyclerViewUpcoming.setAdapter(new FilmListAdapter(items));
+                    }
+
+                    binding.progressUpcoming.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void initTopMoving() {
+        DatabaseReference myRef = database.getReference("Items");
+        binding.progressBarTop.setVisibility(View.VISIBLE);
+        ArrayList<Film> items = new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+                    for (DataSnapshot issue:snapshot.getChildren()) {
+                        items.add(issue.getValue(Film.class));
+                    }
+                    if(!items.isEmpty()) {
+                        binding.recyclerViewTopMovies.setLayoutManager(new LinearLayoutManager(MainActivity.this,
+                                LinearLayoutManager.HORIZONTAL,
+                                false));
+                        binding.recyclerViewTopMovies.setAdapter(new FilmListAdapter(items));
+                    }
+
+                    binding.progressBarTop.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
     private void initBanner() {
         DatabaseReference myRef = database.getReference("Banners");
         binding.progressBarBanner.setVisibility(View.VISIBLE);
