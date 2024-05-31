@@ -8,12 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
@@ -23,6 +26,8 @@ import com.bumptech.glide.request.RequestOptions;
 import java.net.URI;
 
 import eightbitlab.com.blurview.RenderScriptBlur;
+import linh.edu.moviesapp.Adapters.CastListAdapter;
+import linh.edu.moviesapp.Adapters.CategoryEachFilmAdapter;
 import linh.edu.moviesapp.Domains.Film;
 import linh.edu.moviesapp.R;
 import linh.edu.moviesapp.databinding.ActivityDetailBinding;
@@ -35,6 +40,10 @@ import linh.edu.moviesapp.databinding.ActivityDetailBinding;
         binding = ActivityDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setVariable();
+
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     }
     private void setVariable() {
         Film item = (Film) getIntent().getSerializableExtra("object");
@@ -81,7 +90,16 @@ import linh.edu.moviesapp.databinding.ActivityDetailBinding;
         binding.blurView.setOutlineProvider(ViewOutlineProvider.BACKGROUND);
         binding.blurView.setClipToOutline(true);
 
+        if(item.getGenre()!= null) {
+            binding.genreView.setAdapter(new CategoryEachFilmAdapter(item.getGenre()));
+            binding.genreView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        }
 
+
+        if(item.getCasts() != null) {
+            binding.CastView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false ));
+            binding.CastView.setAdapter(new CastListAdapter(item.getCasts()));
+        }
 
 
     }

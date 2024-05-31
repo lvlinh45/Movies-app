@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         database = FirebaseDatabase.getInstance();
 
+
+        // giúp layout của cửa sổ vượt ra ngoài giới hạn thông thường của màn hình.
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -151,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 page.setScaleY(0.85f+ r*0.15f);
             }
         });
+        binding.viewPager2.setPageTransformer(compositePageTransformer);
         binding.viewPager2.setCurrentItem(1);
         binding.viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override

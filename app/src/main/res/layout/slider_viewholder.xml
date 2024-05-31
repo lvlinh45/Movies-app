@@ -9,11 +9,11 @@
         android:id="@+id/imageSlide"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:adjustViewBounds="false"
+        android:minHeight="300dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:minHeight="300dp"
-        android:adjustViewBounds="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
