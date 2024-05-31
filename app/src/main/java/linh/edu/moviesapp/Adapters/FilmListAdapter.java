@@ -1,6 +1,7 @@
 package linh.edu.moviesapp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import linh.edu.moviesapp.Activities.DetailActivity;
 import linh.edu.moviesapp.Domains.Film;
 import linh.edu.moviesapp.R;
 
@@ -50,7 +52,9 @@ public class FilmListAdapter extends RecyclerView.Adapter<FilmListAdapter.ViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("object", items.get(position));
+                context.startActivity(intent);
             }
         });
     }
