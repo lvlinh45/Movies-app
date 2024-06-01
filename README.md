@@ -17,7 +17,9 @@
 <div>
   <h4>Giao diện phần DetailFilm</h4>
   <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/DetailFilm.png" width = "350">
+   <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/xemphim.jpg" width = "350">
 </div>
+___
 <div>
   <h4>File APK: <a href="https://github.com/lvlinh45/Movies-app/blob/3e340afb6812cc9095cde97ab230e1ba2339cc7f/app-debug.apk">Tải File APK</a></h4>
 </div>
