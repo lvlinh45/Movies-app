@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
             if(item.getItemId() == R.id.explorer) {
                 replaceFragment(new ExplorerFragment());
             }
+            if(item.getItemId() == R.id.profile) {
+                replaceFragment(new ProfileFragment());
+            }
             return true;
         });
 

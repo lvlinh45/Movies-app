@@ -1,5 +1,6 @@
 package linh.edu.moviesapp.Activities;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,12 +15,22 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
@@ -27,9 +38,13 @@ import linh.edu.moviesapp.Adapters.FilmListAdapter;
 import linh.edu.moviesapp.Adapters.SlidersAdapter;
 import linh.edu.moviesapp.Domains.Film;
 import linh.edu.moviesapp.Domains.SliderItems;
+import linh.edu.moviesapp.R;
 import linh.edu.moviesapp.databinding.FragmentExplorerBinding;
 
 public class ExplorerFragment extends Fragment {
+    ImageView imgAvatar;
+    TextView txtUsername, txtEmail;
+    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     private FragmentExplorerBinding binding;
     private FirebaseDatabase database;
     private Handler sliderHandler = new Handler();
@@ -43,11 +58,47 @@ public class ExplorerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentExplorerBinding.inflate(inflater, container, false);
+        Mapping();
         database = FirebaseDatabase.getInstance();
         initBanner();
         initTopMoving();
         initUpcoming();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference docRef = db.collection("users").document(firebaseUser.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        String username = "Hello " + document.getString("first_name") +
+                                " " + document.getString("last_name");
+                        String email = document.getString("email");
+                        String linkImg = document.getString("imgAvatar");
+                        assert linkImg != null;
+                        if(linkImg.isEmpty()) {
+                            imgAvatar.setImageDrawable(getResources().getDrawable(R.drawable.baseline_account_circle_24));
+                        }
+                        else {
+                            Glide.with(requireContext())
+                                    .load(linkImg)
+                                    .circleCrop()
+                                    .into(imgAvatar);
+                        }
+                        txtUsername.setText(username);
+                        txtEmail.setText(email);
+                    }
+                }
+            }
+        });
         return binding.getRoot();
+    }
+
+    private void Mapping() {
+        imgAvatar = binding.imgAvatar;
+        txtUsername = binding.txtUsername;
+        txtEmail = binding.txtEmail;
     }
 
     private void initUpcoming() {
