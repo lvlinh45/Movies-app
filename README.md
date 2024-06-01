@@ -8,15 +8,15 @@
 
 <div>
   <h4>Giao diện phần Intro</h4>
-  <img src = "https://github.com/lvlinh45/63134463-AndroidProgramming/blob/main/Images/Cau1.png" width = "500">
+  <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/intro.png" width = "500">
 </div>
 <div>
   <h4>Giao diện phần DashBoard</h4>
-  <img src = "https://github.com/lvlinh45/63134463-AndroidProgramming/blob/main/Images/Cau2.png" width = "200">
+  <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/Dashboard.png" width = "200">
 </div>
 <div>
   <h4>Giao diện phần DetailFilm</h4>
-  <img src = "https://github.com/lvlinh45/63134463-AndroidProgramming/blob/main/Images/Cau3.png" width = "200">
+  <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/DetailFilm.png" width = "200">
 </div>
 
 </div>
