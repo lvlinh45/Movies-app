@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import linh.edu.moviesapp.databinding.ActivityIntroBinding;
 
 public class IntroActivity extends AppCompatActivity {
-    ActivityIntroBinding  binding;
+    ActivityIntroBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
