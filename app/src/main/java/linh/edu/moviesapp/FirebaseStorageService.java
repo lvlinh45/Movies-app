@@ -1,6 +1,6 @@
 package linh.edu.moviesapp;
 
-import android.net.Uri;
+import  android.net.Uri;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
