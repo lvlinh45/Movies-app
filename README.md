@@ -28,10 +28,10 @@
 </div>
 <div>
   <h4>6.Giao diện phần DashBoard</h4>
-  <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/dashboard.png" width = "350">
+  <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/Dashboard.png" width = "350">
 </div>
 <div>
-  <h4>7.Giao diện phần DashBoard</h4>
+  <h4>7.Giao diện phần Chi tiết phim</h4>
   <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/chitietphim.png" width = "350">
   <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/chitietphimv2.png" width = "350">
 </div>
