@@ -52,7 +52,7 @@
 ---
 
 <div>
-  <h4>File APK: <a href="https://github.com/lvlinh45/Movies-app/blob/3e340afb6812cc9095cde97ab230e1ba2339cc7f/app-debug.apk">Tải File APK</a></h4>
+  <h4>File APK: <a href="https://github.com/lvlinh45/Movies-app/blob/main/app-debug.apk">Tải File APK</a></h4>
 </div>
 
 </div>
