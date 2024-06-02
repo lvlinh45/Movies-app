@@ -12,12 +12,12 @@
         android:layout_width="60dp"
         android:layout_height="55dp"
         android:background="@drawable/logout"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
 
     <ImageView
         android:id="@+id/imgAvatar"
@@ -120,8 +120,8 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginEnd="30dp"
-        android:backgroundTint="#C750A5"
-        android:text="Edit"
+        android:backgroundTint="@color/red"
+        android:text="Chỉnh sửa"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintVertical_bias="0.92"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -133,8 +133,8 @@
         android:id="@+id/btnSave"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:backgroundTint="#C750A5"
-        android:text="Save"
+        android:backgroundTint="@color/red"
+        android:text="Lưu"
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintVertical_bias="0.92"
         app:layout_constraintBottom_toBottomOf="parent"

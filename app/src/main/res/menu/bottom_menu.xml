@@ -16,7 +16,7 @@
         app:cnb_iconColor="@color/white"
         />
     <item
-        android:id="@+id/cart_fragment"
+        android:id="@+id/cart"
         android:icon="@drawable/btn_3"
         android:title="Lưu trữ"
         app:cnb_backgroundColor="@color/red"
