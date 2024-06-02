@@ -60,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
         int screenWidth = displayMetrics.widthPixels;
         int screenHeight = displayMetrics.heightPixels;
         int imgWidth = (int) (screenWidth * 0.7);
-        int imgHeight = (int) (screenHeight * 0.17);
+        int imgHeight = (int) (screenHeight * 0.27);
         img.getLayoutParams().width = imgWidth;
         img.getLayoutParams().height = imgHeight;
 

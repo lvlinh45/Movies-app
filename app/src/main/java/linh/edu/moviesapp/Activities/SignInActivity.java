@@ -85,7 +85,7 @@ public class SignInActivity extends AppCompatActivity {
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         int screenWidth = displayMetrics.widthPixels;
         int screenHeight = displayMetrics.heightPixels;
-        int imgWidth = (int) (screenWidth * 0.6);
+        int imgWidth = (int) (screenWidth * 0.7);
         int imgHeight = (int) (screenHeight * 0.27);
         img.getLayoutParams().width = imgWidth;
         img.getLayoutParams().height = imgHeight;
