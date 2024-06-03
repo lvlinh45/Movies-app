@@ -6,13 +6,12 @@
     android:elevation="8dp"
     android:padding="16dp">
 
-    <!-- Content of the bottom sheet dialog -->
-    <!-- Example: A TextView for the confirmation message -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:text="Bạn có muốn đăng xuất không?"
         android:gravity="center"
         android:padding="16dp"
         android:id="@+id/txtTitle"/>
@@ -29,7 +28,7 @@
             android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No"
+            android:text="Không"
             android:background="@android:color/transparent"
             android:textColor="@android:color/black"
             android:textSize="16sp"
@@ -43,7 +42,7 @@
             android:id="@+id/btnConfirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes"
+            android:text="Có"
             android:background="@android:color/transparent"
             android:textColor="@android:color/black"
             android:textSize="16sp"

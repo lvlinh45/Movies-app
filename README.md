@@ -47,6 +47,7 @@
 <div>
   <h4>10.Giao diện phần Hồ sơ</h4>
   <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/hoso.png" width = "350">
+  <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/taianhlen.png" width = "350">
 </div>
 
 ---

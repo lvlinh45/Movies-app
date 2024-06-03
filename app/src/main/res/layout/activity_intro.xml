@@ -41,11 +41,11 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textAlignment="center"
-                android:textSize="20sp"
                 android:layout_margin="32dp"
-                android:text="Watch Prenium Hundress of TV Shows\nand Movies are Waiting for you right\n on the phone" />
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:text="Xem hàng triệu bộ phim chỉ với một cái nhấn trên điện thoại của bạn!"
+                android:textSize="22sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/startBtn"
@@ -56,7 +56,7 @@
                 android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Get Started" />
+                android:text="Bắt đầu ngay" />
 
         </LinearLayout>
     </ScrollView>

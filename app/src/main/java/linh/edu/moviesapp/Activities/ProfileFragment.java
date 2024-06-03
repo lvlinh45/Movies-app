@@ -144,7 +144,7 @@ public class ProfileFragment extends Fragment {
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
             bottomSheetDialog.setContentView(bottomSheetView);
             TextView txtTitle = bottomSheetView.findViewById(R.id.txtTitle);
-            txtTitle.setText("Are you sure you want to logout?");
+            txtTitle.setText("Bạn có muốn đăng xuất?");
 
             Button btnConfirmLogout = bottomSheetView.findViewById(R.id.btnConfirm);
             btnConfirmLogout.setOnClickListener(v1 -> {
@@ -170,11 +170,11 @@ public class ProfileFragment extends Fragment {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         bottomSheetDialog.setContentView(bottomSheetView);
         Button btnConfirm = bottomSheetView.findViewById(R.id.btnConfirm);
-        btnConfirm.setText("Upload Image");
+        btnConfirm.setText("Tải ảnh lên");
         Button btnCancel = bottomSheetView.findViewById(R.id.btnCancel);
-        btnCancel.setText("Remove Image");
+        btnCancel.setText("Xóa ảnh");
         TextView txtTitle = bottomSheetView.findViewById(R.id.txtTitle);
-        txtTitle.setText("Do you want to upload new image?");
+        txtTitle.setText("Bạn có muốn tải ảnh lên?");
         btnConfirm.setOnClickListener(v1 -> {
             // check permission for camera
             if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
