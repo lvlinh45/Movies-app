@@ -20,7 +20,7 @@
 </div>
 <div>
   <h4>4.Giao diện phần Đăng xuất</h4>
-  <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/dangxuat.png" width = "350">
+  <img src = "https://github.com/lvlinh45/Movies-app/blob/main/images/dangxuatv1.png" width = "350">
 </div>
 <div>
   <h4>5.Giao diện phần Intro</h4>
