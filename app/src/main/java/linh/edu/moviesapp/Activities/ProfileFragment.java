@@ -277,7 +277,7 @@ public class ProfileFragment extends Fragment {
     @SuppressLint("SetTextI18n")
     private void showAnnouncementDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-        builder.setTitle("Announcement");
+        builder.setTitle("Thông báo");
         builder.setMessage("Bạn có muốn cập nhật thông tin cá nhân?");
         builder.setPositiveButton("Yes", (dialog, id) -> {
             FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -293,12 +293,12 @@ public class ProfileFragment extends Fragment {
             userRef.update(userInfo)
                     .addOnSuccessListener(aVoid -> {
                         Toast.makeText(requireContext(), "Thông tin đã được cập nhật thành công", Toast.LENGTH_SHORT).show();
-                        btnEdit.setText("Edit");
+                        btnEdit.setText("Chỉnh sửa");
                         GetInfo();
                     })
                     .addOnFailureListener(e -> Toast.makeText(requireContext(), "Có lỗi xảy ra trong quá trình cập nhật", Toast.LENGTH_SHORT).show());
         });
-        builder.setNegativeButton("No", (dialog, id) -> dialog.dismiss());
+        builder.setNegativeButton("Không", (dialog, id) -> dialog.dismiss());
         AlertDialog dialog = builder.create();
         dialog.show();
     }
@@ -342,7 +342,7 @@ public class ProfileFragment extends Fragment {
                         }
                         assert address != null;
                         if(address.isEmpty()) {
-                            edtAddress.setHint("Empty");
+                            edtAddress.setHint("Trống");
                         }
                         else {
                             edtAddress.setText("");
@@ -358,7 +358,7 @@ public class ProfileFragment extends Fragment {
                         }
                         assert birthday != null;
                         if(birthday.isEmpty()) {
-                            edtBirthDay.setHint("Thông tin chưa được bổ sung");
+                            edtBirthDay.setHint("Trống");
                         }
                         else {
                             edtBirthDay.setText("");

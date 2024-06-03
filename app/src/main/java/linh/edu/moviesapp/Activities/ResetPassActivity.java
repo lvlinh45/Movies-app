@@ -38,8 +38,8 @@ public class ResetPassActivity extends AppCompatActivity {
 
     private void showAnnouncementDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Announcement");
-        builder.setMessage("The password reset link has been sent to your email address");
+        builder.setTitle("Thông báo");
+        builder.setMessage("Mật khẩu khôi phục đã được gửi qua Gmail của bạn!");
         builder.setPositiveButton("Go to the login page", (dialog, id) -> {
             Intent intent = new Intent(ResetPassActivity.this, SignInActivity.class);
             startActivity(intent);

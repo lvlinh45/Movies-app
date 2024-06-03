@@ -56,5 +56,9 @@
   <h4>File APK: <a href="https://github.com/lvlinh45/Movies-app/blob/main/app-debug.apk">Tải File APK</a></h4>
 </div>
 
+<div>
+  <h4>Xem video Demo App: <a href="https://www.youtube.com/watch?v=RYsSiVF_Qe8">Xem tại đây</a></h4>
+</div>
+
 </div>
 _Lương Văn Linh - 63134463_
