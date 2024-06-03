@@ -126,9 +126,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
     private void showAnnouncementDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Announcement");
-        builder.setMessage("Sign Up Success");
-        builder.setPositiveButton("Go to the login page", (dialog, id) -> {
+        builder.setTitle("Thông báo");
+        builder.setMessage("Đăng ký thành công");
+        builder.setPositiveButton("Tới trang đăng nhập", (dialog, id) -> {
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
             startActivity(intent);
@@ -139,8 +139,8 @@ public class SignUpActivity extends AppCompatActivity {
     }
     private void showErrorDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Error");
-        builder.setMessage("Registration information is invalid, please check again");
+        builder.setTitle("Lỗi");
+        builder.setMessage("Thông tin đăng ký không hợp lệ, vui lòng thử lại");
         builder.setPositiveButton("OK", (dialog, id) -> dialog.dismiss());
         AlertDialog dialog = builder.create();
         dialog.show();

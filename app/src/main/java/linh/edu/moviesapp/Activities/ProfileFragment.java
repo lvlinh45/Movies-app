@@ -86,7 +86,7 @@ public class ProfileFragment extends Fragment {
                     edtFirstname.setHint("");
                     edtLastname.setHint("");
 
-                    if(edtAddress.getHint().toString().equals("Empty")) {
+                    if(edtAddress.getHint().toString().equals("Thông tin chưa bổ sung")) {
                         edtAddress.setText("");
                         edtAddress.setHint("");
                     }
@@ -94,7 +94,7 @@ public class ProfileFragment extends Fragment {
                         edtAddress.setText(edtAddress.getHint().toString());
                     }
 
-                    if(edtSDT.getHint().toString().equals("Empty")) {
+                    if(edtSDT.getHint().toString().equals("Thông tin chưa bổ sung")) {
                         edtSDT.setText("");
                         edtSDT.setHint("");
                     }
@@ -102,7 +102,7 @@ public class ProfileFragment extends Fragment {
                         edtSDT.setText(edtSDT.getHint().toString());
                     }
 
-                    if(edtBirthDay.getHint().toString().equals("Empty")) {
+                    if(edtBirthDay.getHint().toString().equals("Thông tin chưa bổ sung")) {
                         edtBirthDay.setText("");
                         edtBirthDay.setHint("");
                     }
@@ -125,11 +125,11 @@ public class ProfileFragment extends Fragment {
                     showAnnouncementDialog();
                 }
                 else {
-                    Toast.makeText(getContext(), "First Name and Last Name cannot be left blank", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Họ và tên không được để trống", Toast.LENGTH_SHORT).show();
                 }
             }
             else {
-                Toast.makeText(getContext(), "No information has changed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Chưa có thông tin nào được thay đổi", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -214,8 +214,7 @@ public class ProfileFragment extends Fragment {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        //intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE); // To open camera
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_IMAGE_PICK);
+        startActivityForResult(Intent.createChooser(intent, "Chọn ảnh"), REQUEST_IMAGE_PICK);
     }
 
     @SuppressLint("SuspiciousIndentation")
@@ -250,7 +249,7 @@ public class ProfileFragment extends Fragment {
                             })
                             .addOnFailureListener(e -> Toast.makeText(getContext(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                 } else {
-                    Toast.makeText(getContext(), "Failed to upload image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Tải ảnh lên thất bại", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -279,7 +278,7 @@ public class ProfileFragment extends Fragment {
     private void showAnnouncementDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         builder.setTitle("Announcement");
-        builder.setMessage("Do you want to update your personal information?");
+        builder.setMessage("Bạn có muốn cập nhật thông tin cá nhân?");
         builder.setPositiveButton("Yes", (dialog, id) -> {
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             DocumentReference userRef = db.collection("users").document(firebaseUser.getUid());
@@ -293,11 +292,11 @@ public class ProfileFragment extends Fragment {
 
             userRef.update(userInfo)
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(requireContext(), "The information has been updated successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireContext(), "Thông tin đã được cập nhật thành công", Toast.LENGTH_SHORT).show();
                         btnEdit.setText("Edit");
                         GetInfo();
                     })
-                    .addOnFailureListener(e -> Toast.makeText(requireContext(), "An error occurred while updating information", Toast.LENGTH_SHORT).show());
+                    .addOnFailureListener(e -> Toast.makeText(requireContext(), "Có lỗi xảy ra trong quá trình cập nhật", Toast.LENGTH_SHORT).show());
         });
         builder.setNegativeButton("No", (dialog, id) -> dialog.dismiss());
         AlertDialog dialog = builder.create();
@@ -351,7 +350,7 @@ public class ProfileFragment extends Fragment {
                         }
                         assert SDT != null;
                         if(SDT.isEmpty()) {
-                            edtSDT.setHint("Empty");
+                            edtSDT.setHint("Trống");
                         }
                         else {
                             edtSDT.setText("");
@@ -359,7 +358,7 @@ public class ProfileFragment extends Fragment {
                         }
                         assert birthday != null;
                         if(birthday.isEmpty()) {
-                            edtBirthDay.setHint("Empty");
+                            edtBirthDay.setHint("Thông tin chưa được bổ sung");
                         }
                         else {
                             edtBirthDay.setText("");

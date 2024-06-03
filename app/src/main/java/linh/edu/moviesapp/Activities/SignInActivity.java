@@ -50,8 +50,8 @@ public class SignInActivity extends AppCompatActivity {
 
     private void showErrorDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Error");
-        builder.setMessage("Invalid login information");
+        builder.setTitle("Lỗi!");
+        builder.setMessage("Thông tin đăng nhập không hợp lệ");
         builder.setPositiveButton("OK", (dialog, id) -> dialog.dismiss());
         AlertDialog dialog = builder.create();
         dialog.show();
